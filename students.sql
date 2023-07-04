@@ -1,9 +1,13 @@
+SELECT pg_terminate_backend(pg_stat_activity.pid)
+FROM pg_stat_activity
+WHERE usename = 'freecodecamp';
+
 --
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 12.9 (Ubuntu 12.9-2.pgdg20.04+1)
--- Dumped by pg_dump version 12.9 (Ubuntu 12.9-2.pgdg20.04+1)
+-- Dumped from database version 12.6 (Debian 12.6-1.pgdg90+1)
+-- Dumped by pg_dump version 12.6 (Debian 12.6-1.pgdg90+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -16,7 +20,7 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
-DROP DATABASE students;
+DROP DATABASE IF EXISTS students;
 --
 -- Name: students; Type: DATABASE; Schema: -; Owner: freecodecamp
 --
@@ -185,106 +189,106 @@ ALTER TABLE ONLY public.students ALTER COLUMN student_id SET DEFAULT nextval('pu
 -- Data for Name: courses; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.courses VALUES (29, 'Data Structures and Algorithms');
-INSERT INTO public.courses VALUES (30, 'Web Programming');
-INSERT INTO public.courses VALUES (31, 'Database Systems');
-INSERT INTO public.courses VALUES (32, 'Computer Networks');
-INSERT INTO public.courses VALUES (33, 'SQL');
-INSERT INTO public.courses VALUES (34, 'Machine Learning');
-INSERT INTO public.courses VALUES (35, 'Computer Systems');
-INSERT INTO public.courses VALUES (36, 'Web Applications');
-INSERT INTO public.courses VALUES (37, 'Artificial Intelligence');
-INSERT INTO public.courses VALUES (38, 'Python');
-INSERT INTO public.courses VALUES (39, 'Object-Oriented Programming');
-INSERT INTO public.courses VALUES (40, 'Calculus');
-INSERT INTO public.courses VALUES (41, 'Game Architecture');
-INSERT INTO public.courses VALUES (42, 'Algorithms');
-INSERT INTO public.courses VALUES (43, 'UNIX');
-INSERT INTO public.courses VALUES (44, 'Server Administration');
-INSERT INTO public.courses VALUES (45, 'Network Security');
+INSERT INTO public.courses VALUES (23, 'Data Structures and Algorithms');
+INSERT INTO public.courses VALUES (24, 'Web Programming');
+INSERT INTO public.courses VALUES (25, 'Database Systems');
+INSERT INTO public.courses VALUES (26, 'Computer Networks');
+INSERT INTO public.courses VALUES (27, 'SQL');
+INSERT INTO public.courses VALUES (28, 'Machine Learning');
+INSERT INTO public.courses VALUES (29, 'Computer Systems');
+INSERT INTO public.courses VALUES (30, 'Web Applications');
+INSERT INTO public.courses VALUES (31, 'Artificial Intelligence');
+INSERT INTO public.courses VALUES (32, 'Python');
+INSERT INTO public.courses VALUES (33, 'Object-Oriented Programming');
+INSERT INTO public.courses VALUES (34, 'Calculus');
+INSERT INTO public.courses VALUES (35, 'Game Architecture');
+INSERT INTO public.courses VALUES (36, 'Algorithms');
+INSERT INTO public.courses VALUES (37, 'UNIX');
+INSERT INTO public.courses VALUES (38, 'Server Administration');
+INSERT INTO public.courses VALUES (39, 'Network Security');
 
 
 --
 -- Data for Name: majors; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.majors VALUES (45, 'Database Administration');
-INSERT INTO public.majors VALUES (46, 'Web Development');
-INSERT INTO public.majors VALUES (47, 'Data Science');
-INSERT INTO public.majors VALUES (48, 'Network Engineering');
-INSERT INTO public.majors VALUES (49, 'Computer Programming');
-INSERT INTO public.majors VALUES (50, 'Game Design');
-INSERT INTO public.majors VALUES (51, 'System Administration');
+INSERT INTO public.majors VALUES (36, 'Database Administration');
+INSERT INTO public.majors VALUES (37, 'Web Development');
+INSERT INTO public.majors VALUES (38, 'Data Science');
+INSERT INTO public.majors VALUES (39, 'Network Engineering');
+INSERT INTO public.majors VALUES (40, 'Computer Programming');
+INSERT INTO public.majors VALUES (41, 'Game Design');
+INSERT INTO public.majors VALUES (42, 'System Administration');
 
 
 --
 -- Data for Name: majors_courses; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.majors_courses VALUES (45, 29);
-INSERT INTO public.majors_courses VALUES (46, 30);
-INSERT INTO public.majors_courses VALUES (45, 31);
-INSERT INTO public.majors_courses VALUES (47, 29);
-INSERT INTO public.majors_courses VALUES (48, 32);
-INSERT INTO public.majors_courses VALUES (45, 33);
-INSERT INTO public.majors_courses VALUES (47, 34);
-INSERT INTO public.majors_courses VALUES (48, 35);
-INSERT INTO public.majors_courses VALUES (49, 32);
-INSERT INTO public.majors_courses VALUES (45, 36);
-INSERT INTO public.majors_courses VALUES (50, 37);
-INSERT INTO public.majors_courses VALUES (47, 38);
-INSERT INTO public.majors_courses VALUES (49, 39);
-INSERT INTO public.majors_courses VALUES (51, 35);
-INSERT INTO public.majors_courses VALUES (50, 40);
-INSERT INTO public.majors_courses VALUES (46, 29);
-INSERT INTO public.majors_courses VALUES (47, 40);
-INSERT INTO public.majors_courses VALUES (46, 39);
-INSERT INTO public.majors_courses VALUES (50, 41);
-INSERT INTO public.majors_courses VALUES (51, 32);
-INSERT INTO public.majors_courses VALUES (50, 42);
-INSERT INTO public.majors_courses VALUES (51, 43);
-INSERT INTO public.majors_courses VALUES (51, 44);
-INSERT INTO public.majors_courses VALUES (49, 35);
-INSERT INTO public.majors_courses VALUES (49, 38);
-INSERT INTO public.majors_courses VALUES (48, 45);
-INSERT INTO public.majors_courses VALUES (46, 36);
-INSERT INTO public.majors_courses VALUES (48, 42);
+INSERT INTO public.majors_courses VALUES (36, 23);
+INSERT INTO public.majors_courses VALUES (37, 24);
+INSERT INTO public.majors_courses VALUES (36, 25);
+INSERT INTO public.majors_courses VALUES (38, 23);
+INSERT INTO public.majors_courses VALUES (39, 26);
+INSERT INTO public.majors_courses VALUES (36, 27);
+INSERT INTO public.majors_courses VALUES (38, 28);
+INSERT INTO public.majors_courses VALUES (39, 29);
+INSERT INTO public.majors_courses VALUES (40, 26);
+INSERT INTO public.majors_courses VALUES (36, 30);
+INSERT INTO public.majors_courses VALUES (41, 31);
+INSERT INTO public.majors_courses VALUES (38, 32);
+INSERT INTO public.majors_courses VALUES (40, 33);
+INSERT INTO public.majors_courses VALUES (42, 29);
+INSERT INTO public.majors_courses VALUES (41, 34);
+INSERT INTO public.majors_courses VALUES (37, 23);
+INSERT INTO public.majors_courses VALUES (38, 34);
+INSERT INTO public.majors_courses VALUES (37, 33);
+INSERT INTO public.majors_courses VALUES (41, 35);
+INSERT INTO public.majors_courses VALUES (42, 26);
+INSERT INTO public.majors_courses VALUES (41, 36);
+INSERT INTO public.majors_courses VALUES (42, 37);
+INSERT INTO public.majors_courses VALUES (42, 38);
+INSERT INTO public.majors_courses VALUES (40, 29);
+INSERT INTO public.majors_courses VALUES (40, 32);
+INSERT INTO public.majors_courses VALUES (39, 39);
+INSERT INTO public.majors_courses VALUES (37, 30);
+INSERT INTO public.majors_courses VALUES (39, 36);
 
 
 --
 -- Data for Name: students; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.students VALUES (6, 'Rhea', 'Kellems', 45, 2.5);
+INSERT INTO public.students VALUES (6, 'Rhea', 'Kellems', 36, 2.5);
 INSERT INTO public.students VALUES (7, 'Emma', 'Gilbert', NULL, NULL);
-INSERT INTO public.students VALUES (8, 'Kimberly', 'Whitley', 46, 3.8);
-INSERT INTO public.students VALUES (9, 'Jimmy', 'Felipe', 45, 3.7);
+INSERT INTO public.students VALUES (8, 'Kimberly', 'Whitley', 37, 3.8);
+INSERT INTO public.students VALUES (9, 'Jimmy', 'Felipe', 36, 3.7);
 INSERT INTO public.students VALUES (10, 'Kyle', 'Stimson', NULL, 2.8);
-INSERT INTO public.students VALUES (11, 'Casares', 'Hijo', 50, 4.0);
+INSERT INTO public.students VALUES (11, 'Casares', 'Hijo', 41, 4.0);
 INSERT INTO public.students VALUES (12, 'Noe', 'Savage', NULL, 3.6);
-INSERT INTO public.students VALUES (13, 'Sterling', 'Boss', 50, 3.9);
+INSERT INTO public.students VALUES (13, 'Sterling', 'Boss', 41, 3.9);
 INSERT INTO public.students VALUES (14, 'Brian', 'Davis', NULL, 2.3);
-INSERT INTO public.students VALUES (15, 'Kaija', 'Uronen', 50, 3.7);
-INSERT INTO public.students VALUES (16, 'Faye', 'Conn', 50, 2.1);
-INSERT INTO public.students VALUES (17, 'Efren', 'Reilly', 46, 3.9);
+INSERT INTO public.students VALUES (15, 'Kaija', 'Uronen', 41, 3.7);
+INSERT INTO public.students VALUES (16, 'Faye', 'Conn', 41, 2.1);
+INSERT INTO public.students VALUES (17, 'Efren', 'Reilly', 37, 3.9);
 INSERT INTO public.students VALUES (18, 'Danh', 'Nhung', NULL, 2.4);
-INSERT INTO public.students VALUES (19, 'Maxine', 'Hagenes', 45, 2.9);
-INSERT INTO public.students VALUES (20, 'Larry', 'Saunders', 47, 2.2);
-INSERT INTO public.students VALUES (21, 'Karl', 'Kuhar', 46, NULL);
-INSERT INTO public.students VALUES (22, 'Lieke', 'Hazenveld', 50, 3.5);
-INSERT INTO public.students VALUES (23, 'Obie', 'Hilpert', 46, NULL);
+INSERT INTO public.students VALUES (19, 'Maxine', 'Hagenes', 36, 2.9);
+INSERT INTO public.students VALUES (20, 'Larry', 'Saunders', 38, 2.2);
+INSERT INTO public.students VALUES (21, 'Karl', 'Kuhar', 37, NULL);
+INSERT INTO public.students VALUES (22, 'Lieke', 'Hazenveld', 41, 3.5);
+INSERT INTO public.students VALUES (23, 'Obie', 'Hilpert', 37, NULL);
 INSERT INTO public.students VALUES (24, 'Peter', 'Booysen', NULL, 2.9);
-INSERT INTO public.students VALUES (25, 'Nathan', 'Turner', 45, 3.3);
-INSERT INTO public.students VALUES (26, 'Gerald', 'Osiki', 47, 2.2);
-INSERT INTO public.students VALUES (27, 'Vanya', 'Hassanah', 50, 4.0);
-INSERT INTO public.students VALUES (28, 'Roxelana', 'Florescu', 45, 3.2);
-INSERT INTO public.students VALUES (29, 'Helene', 'Parker', 47, 3.4);
-INSERT INTO public.students VALUES (30, 'Mariana', 'Russel', 46, 1.8);
+INSERT INTO public.students VALUES (25, 'Nathan', 'Turner', 36, 3.3);
+INSERT INTO public.students VALUES (26, 'Gerald', 'Osiki', 38, 2.2);
+INSERT INTO public.students VALUES (27, 'Vanya', 'Hassanah', 41, 4.0);
+INSERT INTO public.students VALUES (28, 'Roxelana', 'Florescu', 36, 3.2);
+INSERT INTO public.students VALUES (29, 'Helene', 'Parker', 38, 3.4);
+INSERT INTO public.students VALUES (30, 'Mariana', 'Russel', 37, 1.8);
 INSERT INTO public.students VALUES (31, 'Ajit', 'Dhungel', NULL, 3.0);
-INSERT INTO public.students VALUES (32, 'Mehdi', 'Vandenberghe', 45, 1.9);
-INSERT INTO public.students VALUES (33, 'Dejon', 'Howell', 46, 4.0);
-INSERT INTO public.students VALUES (34, 'Aliya', 'Gulgowski', 51, 2.6);
-INSERT INTO public.students VALUES (35, 'Ana', 'Tupajic', 47, 3.1);
+INSERT INTO public.students VALUES (32, 'Mehdi', 'Vandenberghe', 36, 1.9);
+INSERT INTO public.students VALUES (33, 'Dejon', 'Howell', 37, 4.0);
+INSERT INTO public.students VALUES (34, 'Aliya', 'Gulgowski', 42, 2.6);
+INSERT INTO public.students VALUES (35, 'Ana', 'Tupajic', 38, 3.1);
 INSERT INTO public.students VALUES (36, 'Hugo', 'Duran', NULL, 3.8);
 
 
@@ -292,14 +296,14 @@ INSERT INTO public.students VALUES (36, 'Hugo', 'Duran', NULL, 3.8);
 -- Name: courses_course_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.courses_course_id_seq', 45, true);
+SELECT pg_catalog.setval('public.courses_course_id_seq', 39, true);
 
 
 --
 -- Name: majors_major_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.majors_major_id_seq', 51, true);
+SELECT pg_catalog.setval('public.majors_major_id_seq', 42, true);
 
 
 --
